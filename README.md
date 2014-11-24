@@ -32,7 +32,9 @@ Comparing APL to Lisp, in favor of Lisp: Grown by users, not just
 creator. In Lisp, new words defined by users looks and works like
 primitives.
 
-Exercise: defining garbage collection in terms of one syllable words.
+Exercise: defining garbage collection in terms of one syllable
+words. Here's how Tom Ballinger did it:
+(http://ballingt.com/2014/09/21/garbage-collection.html)[garbage collection].
 
 > Our main goal in designing a language should be to plan for growth.
 
@@ -65,19 +67,66 @@ Choose short words when you can.
 He thinks it's a good idea to only use words of one syllable and
 define terms. Inclined to agree.
 
+### Reflections on Trusting Trust (1984), by Thompson
+
+Starts with: to what extent should one trust a statement that a
+program is free of Trojan horses?
+
+Is this true? If it is, it's pretty amazing:
+
+> This brings me to Dennis Ritchie. Our collaboration has been a thing
+> of beauty. In the ten years that we have worked together, I can
+> recall only one case of miscoordination of work. On that occassion,
+> I discovered that we had both written the same 20-line assembly
+> language program. I compared that sources and was astounded to find
+> that they match character-for-character.
+
+That's how constrained the design space is for great
+programmers. Similar to how FP in Scala they talk about function
+signatures that can only be implemented in one way. The rest is just
+conventions and getting rid of fluff.
+
+A game he used to play in college: write the shortest self-reproducing
+program. I.e., when compiled and executed, it will produce an exact
+copy of its source.
+
+He gives examples of this and how it implies you can't trust your
+compiler.
+
+Frankly, I don't understand the paper, and I haven't spent enough time
+on it. It's not of interest to me right now, but from googling around
+I can see its importance. Let's save it for the future.
+
+
 ### Queue
-
-See
-https://www.hackerschool.com/blog/42-paper-of-the-week-reflections-on-trusting-trust
-and https://www.hackerschool.com/blog
-
 
 (Reflections on Trusting
 Trust)[https://www.ece.cmu.edu/~ganger/712.fall02/papers/p761-thompson.pdf]
 
+(Error Detecting and Error Correcting Codes)[http://www.lee.eng.uerj.br/~gil/redesII/hamming.pdf]
+
+https://www.hackerschool.com/blog/44-paper-of-the-week-error-detecting-and-error-correcting-codes
+
+More: https://www.hackerschool.com/blog/46-paper-of-the-week-on-understanding-data-abstraction-revisited
+
+More: https://www.hackerschool.com/blog/48-paper-of-the-week-the-power-of-interoperability-why-objects-are-inevitable
+
+More: https://www.hackerschool.com/blog/49-paper-of-the-week-the-chubby-lock-service-for-loosely-coupled-distributed-systems
+
+More: https://www.hackerschool.com/blog/51-paper-of-the-week-out-of-the-tar-pit
+
+More: https://www.hackerschool.com/blog/53-paper-of-the-week-managing-update-conflicts-in-bayou-a-weakly-connected-replicated-storage-system
+
+More: https://www.hackerschool.com/blog/55-paper-of-the-week-worlds-controlling-the-scope-of-side-effects
+
 (Worlds: Controlling th Scope of Side Effects)[http://www.vpri.org/pdf/tr2011001_final_worlds.pdf]
 
-and more.
+More: https://www.hackerschool.com/blog/57-paper-of-the-week-the-power-of-two-random-choices-a-survey-of-techniques-and-results
 
 (The Power of Two Random Choices: A Survey of Techniques and
 Results)[http://www.eecs.harvard.edu/~michaelm/postscripts/handbook2001.pdf]
+
+
+## Queue
+
+(The Comfy 6502 compiler)[http://www.pipeline.com/~hbaker1/sigplannotices/sigcol04.pdf]
