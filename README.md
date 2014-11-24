@@ -18,6 +18,8 @@ good, do it right. Read papers.
 
 ### Growing a Language (1998), by Steele
 
+(http://www.cs.virginia.edu/~evans/cs655/readings/steele.pdf)[link]
+
 Starts with a fundamental question: should a programming language be
 small or large? In the sense of vocabulary. Trade-off: long time to
 learn vs hard to use. Is that a real trade-off?
@@ -69,6 +71,8 @@ define terms. Inclined to agree.
 
 ### Reflections on Trusting Trust (1984), by Thompson
 
+(https://www.ece.cmu.edu/~ganger/712.fall02/papers/p761-thompson.pdf)[link]
+
 Starts with: to what extent should one trust a statement that a
 program is free of Trojan horses?
 
@@ -90,20 +94,46 @@ A game he used to play in college: write the shortest self-reproducing
 program. I.e., when compiled and executed, it will produce an exact
 copy of its source.
 
-He gives examples of this and how it implies you can't trust your
-compiler.
+I read it more carefully now and it's pretty mind-blowing. The basic
+concept is this: In order to add a feature to the C compiler we have
+to change the source code, which is written in C. When we try to
+compile something the binary compiler doesn't have support for, we
+will get an error. How do we get around this problem?
 
-Frankly, I don't understand the paper, and I haven't spent enough time
-on it. It's not of interest to me right now, but from googling around
-I can see its importance. Let's save it for the future.
+He gives an example of the interpreter of character escape sequences
+(\n etc). If we want to add a new one, we can first add a if(c=='v')
+return(11) line (ascii decimal for \v, a vertical tab). Then it
+compiles, we swap the binary and then we can write \v, which gets
+interpreted correctly. We have now gone around the chicken-and-egg
+problem.
 
+A similar technique can be done maliciously. If we come upon a certain
+pattern in the reading of the source code, we trigger some bug. This
+is added to the source code of the compiler, then compiled into new
+compiler. This might be too obvious, since it's in the source code,
+but we can hide it - write a program similar to the Quine (?)
+described in the beginning, and the code to prompt this bug will be
+inserted. We now have a new binary, and can remove it from the source
+code. There's no trace of the malicious bug triggering. This is a
+Trojan horse.
+
+The gist of it is: you have to write it yourself to trust it, or trust
+the people behind the code. Many levels where this could happen - C,
+assembly, hardware etc. Many security implications.
+
+There exists some kind of work-around for this, given that you have
+multiple compilers. Schneier puts it better.
+
+https://www.schneier.com/blog/archives/2006/01/countering_trus.html
+and David A. Wheleer: "Countering Trusting Trust through Diverse
+Double-Compiling,"
+
+### Error Detecting and Error Correcting Codes, by Hamming
+(Error Detecting and Error Correcting Codes)[http://www.lee.eng.uerj.br/~gil/redesII/hamming.pdf]
 
 ### Queue
 
-(Reflections on Trusting
-Trust)[https://www.ece.cmu.edu/~ganger/712.fall02/papers/p761-thompson.pdf]
-
-(Error Detecting and Error Correcting Codes)[http://www.lee.eng.uerj.br/~gil/redesII/hamming.pdf]
+Read again: https://www.ece.cmu.edu/~ganger/712.fall02/papers/p761-thompson.pdf
 
 https://www.hackerschool.com/blog/44-paper-of-the-week-error-detecting-and-error-correcting-codes
 
